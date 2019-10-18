@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import doListService from "./service/toDo"
+import doListService from "./service/toDo";
+import Dolist from "./components/ToDoList";
 
 import './App.css';
 
@@ -20,8 +21,7 @@ const App = props => {
     <>
       <div>
         <h1>Trolololooo</h1>
-        
-        {toDos.map(t => <p key= {t.id}> {t.taskname}</p>)}
+        <Dolist toDos={toDos} />        
       </div>
     </>
   );
