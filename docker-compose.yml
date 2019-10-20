@@ -1,0 +1,14 @@
+version: '3'
+services:
+  client:
+    build: dolistfrontend    
+    ports:
+      - 3000:3000
+    container_name: mvw_ui
+    depends_on:
+      - api
+  api:
+    build: dolistwithexpress
+    ports:
+         - 8888:8888
+    container_name: mvw_api
