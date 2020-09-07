@@ -1,19 +1,11 @@
+Jenkinsfile (Declarative Pipeline)
 pipeline {
-
-   agent any
-
-   stages {
-       stage('docker-compose') {
-           steps {
-              sh "docker-compose build"
-              sh "docker-compose up -d"
-              ...
-           }
-       }
-   }
-   post {
-      always {
-         sh "docker-compose down || true"
-      }
-   }   
+    agent { docker { image 'node:6.3' } }
+    stages {
+        stage('build') {
+            steps {
+                sh 'npm --version'
+            }
+        }
+    }
 }
